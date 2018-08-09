@@ -1,11 +1,11 @@
 # DC/OS Instances
 
-Creates DC/OS Master intances
+Creates DC/OS Bootstrap intance
 
 ## Usage
 
 ```hcl
-module "masters" {
+module "bootstraps" {
   source = "../terraform-gcp-instances"
 
   # version = "0.0.0"

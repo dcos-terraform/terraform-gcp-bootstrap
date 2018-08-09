@@ -1,5 +1,5 @@
 # Number of Instance
-variable "num_masters" {}
+variable "num_bootstraps" {}
 
 # Cluster Name
 variable "cluster_name" {}
@@ -23,7 +23,7 @@ variable "disk_type" {}
 variable "disk_size" {}
 
 # Instance Subnetwork Name
-variable "master_subnetwork_name" {}
+variable "bootstrap_subnetwork_name" {}
 
 # Customer Provided Userdata
 variable "gcp_user_data" {}
@@ -42,7 +42,7 @@ variable "tags" {
 
 # Format the hostname inputs are index+1, region, cluster_name
 variable "hostname_format" {
-  default = "%[3]s-masters%[1]d-%[2]s"
+  default = "%[3]s-bootstraps%[1]d-%[2]s"
 }
 
 # Specify the cluster name all resources get named and tagged with

@@ -1,6 +1,6 @@
 # Number of Instance
-output "num_masters" {
-  value = "${var.num_masters}"
+output "num_bootstraps" {
+  value = "${var.num_bootstraps}"
 }
 
 # Cluster Name
@@ -39,8 +39,8 @@ output "disk_size" {
 }
 
 # Instance Subnetwork Name
-output "master_subnetwork_name" {
-  value = "${var.master_subnetwork_name}"
+output "bootstrap_subnetwork_name" {
+  value = "${var.bootstrap_subnetwork_name}"
 }
 
 # Customer Provided Userdata
@@ -59,11 +59,11 @@ output "public_ssh_key" {
 }
 
 # Private IP Addresses
-output "master_private_ip_addresses" {
-  value = ["${google_compute_master.masters.*.network_interface.0.address}"]
+output "bootstrap_private_ip_addresses" {
+  value = ["${module.dcos-bootstrap-instances.*.network_interface.0.address}"]
 }
 
 # Public IP Addresses
-output "master_public_ip_addresses" {
-  value = ["${google_compute_master.masters.*.network_interface.0.access_config.0.assigned_nat_ip}"]
+output "bootstrap_public_ip_addresses" {
+  value = ["${module.dcos-bootstrap-instances.*.network_interface.0.access_config.0.assigned_nat_ip}"]
 }
