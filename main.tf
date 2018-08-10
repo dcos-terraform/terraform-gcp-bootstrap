@@ -1,7 +1,7 @@
 provider "google" {}
 
 module "dcos-tested-oses" {
-  source  = "dcos-terraform/tested-oses/gcp"
+  source  = "dcos-terraform/gcp-tested-oses/template"
   version = "~> 0.0"
 
   providers = {
@@ -21,9 +21,9 @@ module "dcos-bootstrap-instances" {
 
   cluster_name             = "${var.cluster_name}"
   hostname_format          = "${var.hostname_format}"
-  num                      = "${var.num_bootstraps}"
+  num_instances           = "${var.num_bootstraps}"
   image                    = "${coalesce(var.image, module.dcos-tested-oses.gcp_image_name)}"
-  user_data                = "${var.image == "" ? module.dcos-tested-oses.os-setup : var.gcp_user_data}"
+  gcp_user_data                = "${var.image == "" ? module.dcos-tested-oses.os-setup : var.user_data}"
   machine_type             = "${var.machine_type}"
   instance_subnetwork_name = ["${var.bootstrap_subnetwork_name}"]
   ssh_user                 = "${var.ssh_user}"
@@ -32,4 +32,5 @@ module "dcos-bootstrap-instances" {
   disk_type                = "${var.disk_type}"
   disk_size                = "${var.disk_size}"
   tags                     = "${var.tags}"
+  region = "${var.region}"
 }
