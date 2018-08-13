@@ -21,16 +21,15 @@ module "dcos-bootstrap-instances" {
 
   cluster_name             = "${var.cluster_name}"
   hostname_format          = "${var.hostname_format}"
-  num_instances           = "${var.num_bootstraps}"
+  num_instances            = "${var.num_bootstrap}"
   image                    = "${coalesce(var.image, module.dcos-tested-oses.gcp_image_name)}"
-  gcp_user_data                = "${var.image == "" ? module.dcos-tested-oses.os-setup : var.user_data}"
+  user_data                = "${var.image == "" ? module.dcos-tested-oses.os-setup : var.user_data}"
   machine_type             = "${var.machine_type}"
-  instance_subnetwork_name = ["${var.bootstrap_subnetwork_name}"]
+  instance_subnetwork_name = "${var.bootstrap_subnetwork_name}"
   ssh_user                 = "${var.ssh_user}"
   public_ssh_key           = "${var.public_ssh_key}"
   zone_list                = "${var.zone_list}"
   disk_type                = "${var.disk_type}"
   disk_size                = "${var.disk_size}"
   tags                     = "${var.tags}"
-  region = "${var.region}"
 }

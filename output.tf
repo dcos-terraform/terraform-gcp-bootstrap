@@ -1,16 +1,11 @@
 # Number of Instance
-output "num_bootstraps" {
-  value = "${var.num_bootstraps}"
+output "num_bootstrap" {
+  value = "${var.num_bootstrap}"
 }
 
 # Cluster Name
 output "cluster_name" {
   value = "${var.cluster_name}"
-}
-
-# Region
-output "region" {
-  value = "${var.region}"
 }
 
 # Instance Type
