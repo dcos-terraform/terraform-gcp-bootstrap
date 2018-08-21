@@ -52,7 +52,7 @@ variable "tags" {
 
 # Format the hostname inputs are index+1, region, name_prefix
 variable "hostname_format" {
-  default = "bootstraps-%[1]d-%[2]s"
+  default = "%[2]s-bootstraps-%[1]d"
 }
 
 # The operating system to use. Instead of using your own AMI you could use a provided OS.
