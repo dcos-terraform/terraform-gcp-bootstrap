@@ -62,3 +62,18 @@ output "private_ips" {
 output "public_ips" {
   value = ["${module.dcos-bootstrap-instances.public_ips}"]
 }
+
+# Tested DCOS OSes Name
+output "dcos_instance_os" {
+  value = "${var.dcos_instance_os}"
+}
+
+# Bootstrap Self Link
+output "instances_self_link" {
+  value = ["${module.dcos-bootstrap-instances.instances_self_link}"]
+}
+
+# Bootstrap Target Pool Self link
+output "target_pool" {
+  value = ["${module.dcos-bootstrap-instances.target_pool}"]
+}
