@@ -9,6 +9,9 @@ variable "name_prefix" {}
 # Instance Type
 variable "machine_type" {}
 
+# DCOS version
+variable "dcos_version" {}
+
 # Element by zone list
 variable "zone_list" {
   type    = "list"
