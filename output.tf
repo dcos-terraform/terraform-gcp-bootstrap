@@ -54,12 +54,12 @@ output "public_ssh_key" {
 }
 
 # Private IP Addresses
-output "private_ips" {
+output "private_ip" {
   value = ["${module.dcos-bootstrap-instances.private_ips}"]
 }
 
 # Public IP Addresses
-output "public_ips" {
+output "public_ip" {
   value = ["${module.dcos-bootstrap-instances.public_ips}"]
 }
 
