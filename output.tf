@@ -78,7 +78,7 @@ output "target_pool" {
   value = ["${module.dcos-bootstrap-instances.target_pool}"]
 }
 
-# Returns the ID of the prereq script (if user_data are not used)
+# Returns the ID of the prereq script (if images are not used)
 output "prereq_id" {
   value = "${module.dcos-bootstrap-instances.prereq_id}"
 }
