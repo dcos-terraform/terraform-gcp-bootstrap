@@ -73,11 +73,6 @@ output "instances_self_link" {
   value = ["${module.dcos-bootstrap-instances.instances_self_link}"]
 }
 
-# Bootstrap Target Pool Self link
-output "target_pool" {
-  value = ["${module.dcos-bootstrap-instances.target_pool}"]
-}
-
 # Returns the ID of the prereq script (if images are not used)
 output "prereq_id" {
   value = "${module.dcos-bootstrap-instances.prereq_id}"
