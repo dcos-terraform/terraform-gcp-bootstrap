@@ -68,6 +68,11 @@ output "dcos_instance_os" {
   value = "${var.dcos_instance_os}"
 }
 
+# Deploy instance with preemptible scheduling. (bool)
+variable "scheduling_preemptible" {
+  default = "false"
+}
+
 # Bootstrap Self Link
 output "instances_self_link" {
   value = ["${module.dcos-bootstrap-instances.instances_self_link}"]

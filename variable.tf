@@ -47,6 +47,11 @@ variable "tags" {
   default = []
 }
 
+# Deploy instance with preemptible scheduling. (bool)
+variable "scheduling_preemptible" {
+  default = "false"
+}
+
 # Format the hostname inputs are index+1, region, name_prefix
 variable "hostname_format" {
   default = "%[2]s-bootstraps-%[1]d"
