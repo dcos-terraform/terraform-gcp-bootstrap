@@ -31,6 +31,7 @@ module "bootstraps" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | bootstrap_subnetwork_name | bootstrap subnetwork name | string | - | yes |
+| cluster_name | Cluster Name | string | - | yes |
 | dcos_instance_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `centos_7.4` | no |
 | dcos_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | - | yes |
 | disk_size | disk size | string | - | yes |
@@ -38,7 +39,6 @@ module "bootstraps" {
 | hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[2]s-bootstraps-%[1]d` | no |
 | image | image | string | - | yes |
 | machine_type | machine type | string | - | yes |
-| name_prefix | Cluster Name | string | - | yes |
 | num_bootstrap | num bootstrap | string | `1` | no |
 | public_ssh_key | public ssh key | string | - | yes |
 | scheduling_preemptible | scheduling preemptible | string | `false` | no |
