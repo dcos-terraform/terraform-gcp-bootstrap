@@ -1,6 +1,6 @@
 # Number of Instance
 output "num_bootstrap" {
-  description = "num bootstrap"
+  description = "Number of Instance"
   value       = "${var.num_bootstrap}"
 }
 
@@ -12,37 +12,37 @@ output "name_prefix" {
 
 # Instance Type
 output "machine_type" {
-  description = "machine type"
+  description = "Instance Type"
   value       = "${var.machine_type}"
 }
 
 # Element by zone list
 output "zone_list" {
-  description = "zone list"
+  description = "Element by zone list"
   value       = "${var.zone_list}"
 }
 
 # Source image to boot from
 output "image" {
-  description = "image"
+  description = "Source image to boot from"
   value       = "${var.image}"
 }
 
 # Disk Type to Leverage
 output "disk_type" {
-  description = "Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional)"
+  description = "Disk Type to Leverage The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional)"
   value       = "${var.disk_type}"
 }
 
 # Disk Size in GB
 output "disk_size" {
-  description = "disk size"
+  description = "Disk Size in GB"
   value       = "${var.disk_size}"
 }
 
 # Instance Subnetwork Name
 output "bootstrap_subnetwork_name" {
-  description = "bootstrap subnetwork name"
+  description = "Instance Subnetwork Name"
   value       = "${var.bootstrap_subnetwork_name}"
 }
 
@@ -54,13 +54,13 @@ output "user_data" {
 
 # SSH User
 output "ssh_user" {
-  description = "ssh user"
+  description = "SSH User"
   value       = "${module.dcos-bootstrap-instances.ssh_user}"
 }
 
 # SSH Public Key
 output "public_ssh_key" {
-  description = "public ssh key"
+  description = "SSH Public Key"
   value       = "${var.public_ssh_key}"
 }
 
@@ -84,7 +84,7 @@ output "dcos_instance_os" {
 
 # Preemptible Scheduling (bool)
 output "scheduling_preemptible" {
-  description = "scheduling preemptible"
+  description = "Deploy instance with preemptible scheduling. (bool)"
   value       = "${var.scheduling_preemptible}"
 }
 
@@ -96,6 +96,6 @@ output "instances_self_link" {
 
 # Returns the ID of the prereq script (if images are not used)
 output "prereq_id" {
-  description = "prereq id"
+  description = "UNDEFINED"
   value       = "${module.dcos-bootstrap-instances.prereq_id}"
 }

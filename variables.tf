@@ -1,17 +1,17 @@
 # Number of Instance
 variable "num_bootstrap" {
-  description = "num bootstrap"
+  description = "Number of Instance"
   default     = "1"
 }
 
 # Cluster Name
 variable "cluster_name" {
-  description = "Cluster Name"
+  description = "Name of the DC/OS cluster"
 }
 
 # Instance Type
 variable "machine_type" {
-  description = "machine type"
+  description = "Instance Type"
 }
 
 # DCOS version
@@ -21,29 +21,29 @@ variable "dcos_version" {
 
 # Element by zone list
 variable "zone_list" {
-  description = "zone list"
+  description = "Element by zone list"
   type        = "list"
   default     = []
 }
 
 # Source image to boot from
 variable "image" {
-  description = "image"
+  description = "Source image to boot from"
 }
 
 # Disk Type to Leverage
 variable "disk_type" {
-  description = "Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional)"
+  description = "Disk Type to Leverage The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional)"
 }
 
 # Disk Size in GB
 variable "disk_size" {
-  description = "disk size"
+  description = "Disk Size in GB"
 }
 
 # Instance Subnetwork Name
 variable "bootstrap_subnetwork_name" {
-  description = "bootstrap subnetwork name"
+  description = "Instance Subnetwork Name"
 }
 
 # Customer Provided Userdata
@@ -54,12 +54,12 @@ variable "user_data" {
 
 # SSH User
 variable "ssh_user" {
-  description = "ssh user"
+  description = "SSH User"
 }
 
 # SSH Public Key
 variable "public_ssh_key" {
-  description = "public ssh key"
+  description = "SSH Public Key"
 }
 
 # Add special tags to the resources created by this module
@@ -71,7 +71,7 @@ variable "tags" {
 
 # Deploy instance with preemptible scheduling. (bool)
 variable "scheduling_preemptible" {
-  description = "scheduling preemptible"
+  description = "Deploy instance with preemptible scheduling. (bool)"
   default     = "false"
 }
 
