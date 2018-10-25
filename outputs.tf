@@ -96,6 +96,6 @@ output "instances_self_link" {
 
 # Returns the ID of the prereq script (if images are not used)
 output "prereq_id" {
-  description = "UNDEFINED"
+  description = "Prereq id used for dependency"
   value       = "${module.dcos-bootstrap-instances.prereq_id}"
 }
