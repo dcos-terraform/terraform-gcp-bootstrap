@@ -7,7 +7,7 @@
  * ## Usage
  *
  *```hcl
- * module "bootstraps" {
+ * module "bootstrap" {
  *   source = "dcos-terraform/instances/gcp"
  *   version = "~> 0.2.0"
  *
@@ -29,7 +29,7 @@
 
 provider "google" {}
 
-module "dcos-bootstrap-instances" {
+module "dcos-bootstrap-instance" {
   source  = "dcos-terraform/instance/gcp"
   version = "~> 0.2.0"
 

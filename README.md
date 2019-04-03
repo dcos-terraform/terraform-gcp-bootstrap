@@ -1,12 +1,12 @@
 [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-bootstrap/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-bootstrap/job/master/)
 # DC/OS Instances
 
-Creates DC/OS Bootstrap intance
+Creates DC/OS Bootstrap instance
 
 ## Usage
 
 ```hcl
-module "bootstraps" {
+module "bootstrap" {
   source = "dcos-terraform/instances/gcp"
   version = "~> 0.2.0"
 
@@ -66,7 +66,6 @@ module "bootstraps" {
 | public_ip | Public IP Addresses |
 | public_ssh_key | SSH Public Key |
 | scheduling_preemptible | Preemptible Scheduling (bool) |
-| ssh_user | SSH User |
+| os_user | OS / SSH User |
 | user_data | Customer Provided Userdata |
 | zone_list | Element by zone list |
-

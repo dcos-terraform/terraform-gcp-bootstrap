@@ -70,12 +70,6 @@ output "scheduling_preemptible" {
   value       = "${var.scheduling_preemptible}"
 }
 
-# Bootstrap Self Link
-output "instances_self_link" {
-  description = "List of instance self links"
-  value       = ["${module.dcos-bootstrap-instances.instances_self_link}"]
-}
-
 output "instance" {
   description = "List of instances IDs created by this module"
   value       = "${element(concat(module.dcos-bootstrap-instance.instances, list("")), 0)}"
