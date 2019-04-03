@@ -72,7 +72,7 @@ output "scheduling_preemptible" {
 
 output "instances_self_link" {
   description = "List of instance self links"
-  value       = ["${module.dcos-bootstrap-instances.instances_self_link}"]
+  value       = ["${module.dcos-bootstrap-instance.instances_self_link}"]
 }
 
 output "public_ip" {
