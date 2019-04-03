@@ -70,9 +70,9 @@ output "scheduling_preemptible" {
   value       = "${var.scheduling_preemptible}"
 }
 
-output "instance" {
-  description = "List of instances IDs created by this module"
-  value       = "${element(concat(module.dcos-bootstrap-instance.instances, list("")), 0)}"
+output "instances_self_link" {
+  description = "List of instance self links"
+  value       = ["${module.dcos-bootstrap-instances.instances_self_link}"]
 }
 
 output "public_ip" {
@@ -87,10 +87,10 @@ output "private_ip" {
 
 output "os_user" {
   description = "The OS user to be used"
-  value       = "${module.dcos-bootstrap-instance.os_user}"
+  value       = "${module.dcos-bootstrap-instance.ssh_user}"
 }
 
 output "prereq-id" {
   description = "Returns the ID of the prereq script (if user_data or ami are not used)"
-  value       = "${module.dcos-bootstrap-instance.prereq-id}"
+  value       = "${module.dcos-bootstrap-instance.prereq_id}"
 }
