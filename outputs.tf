@@ -52,28 +52,10 @@ output "user_data" {
   value       = "${var.user_data}"
 }
 
-# SSH User
-output "ssh_user" {
-  description = "SSH User"
-  value       = "${module.dcos-bootstrap-instances.ssh_user}"
-}
-
 # SSH Public Key
 output "public_ssh_key" {
   description = "SSH Public Key"
   value       = "${var.public_ssh_key}"
-}
-
-# Private IP Addresses
-output "private_ip" {
-  description = "List of private ip addresses created by this module"
-  value       = ["${module.dcos-bootstrap-instances.private_ips}"]
-}
-
-# Public IP Addresses
-output "public_ip" {
-  description = "List of public ip addresses created by this module"
-  value       = ["${module.dcos-bootstrap-instances.public_ips}"]
 }
 
 # Tested DCOS OSes Name
@@ -94,8 +76,27 @@ output "instances_self_link" {
   value       = ["${module.dcos-bootstrap-instances.instances_self_link}"]
 }
 
-# Returns the ID of the prereq script (if images are not used)
-output "prereq_id" {
-  description = "Prereq id used for dependency"
-  value       = "${module.dcos-bootstrap-instances.prereq_id}"
+output "instance" {
+  description = "List of instances IDs created by this module"
+  value       = "${element(concat(module.dcos-bootstrap-instance.instances, list("")), 0)}"
+}
+
+output "public_ip" {
+  description = "List of public ip addresses created by this module"
+  value       = "${element(concat(module.dcos-bootstrap-instance.public_ips, list("")), 0)}"
+}
+
+output "private_ip" {
+  description = "List of private ip addresses created by this module"
+  value       = "${element(concat(module.dcos-bootstrap-instance.private_ips, list("")), 0)}"
+}
+
+output "os_user" {
+  description = "The OS user to be used"
+  value       = "${module.dcos-bootstrap-instance.os_user}"
+}
+
+output "prereq-id" {
+  description = "Returns the ID of the prereq script (if user_data or ami are not used)"
+  value       = "${module.dcos-bootstrap-instance.prereq-id}"
 }
