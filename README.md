@@ -32,14 +32,14 @@ module "bootstrap" {
 | bootstrap\_subnetwork\_name | Instance Subnetwork Name | string | n/a | yes |
 | cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
 | dcos\_instance\_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `"centos_7.4"` | no |
-| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | n/a | yes |
+| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | n/a | yes |
 | disk\_size | Disk Size in GB | string | n/a | yes |
 | disk\_type | Disk Type to Leverage The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | n/a | yes |
 | hostname\_format | Format the hostname inputs are index+1, region, cluster_name | string | `"%[3]s-bootstrap%[1]d-%[2]s"` | no |
 | image | Source image to boot from | string | n/a | yes |
 | labels | Add custom labels to all resources | map | `<map>` | no |
 | machine\_type | Instance Type | string | n/a | yes |
-| num\_bootstrap | Number of Instance | string | `"1"` | no |
+| num\_bootstrap | Specify the amount of bootstrap. You should have at most 1 | string | `"1"` | no |
 | public\_ssh\_key | SSH Public Key | string | n/a | yes |
 | scheduling\_preemptible | Deploy instance with preemptible scheduling. (bool) | string | `"false"` | no |
 | ssh\_user | SSH User | string | n/a | yes |
@@ -58,8 +58,8 @@ module "bootstrap" {
 | image | Source image to boot from |
 | instances\_self\_link | List of instance self links |
 | machine\_type | Instance Type |
-| name\_prefix | Cluster Name |
-| num\_bootstrap | Number of Instance |
+| name\_prefix | Name Prefix |
+| num\_bootstrap | Specify the amount of bootstrap. You should have at most 1 |
 | os\_user | The OS user to be used |
 | prereq-id | Returns the ID of the prereq script (if user_data or ami are not used) |
 | private\_ip | List of private ip addresses created by this module |
