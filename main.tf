@@ -41,7 +41,7 @@ module "dcos-bootstrap-instance" {
   hostname_format          = "${var.hostname_format}"
   num_instances            = "${var.num_bootstrap}"
   image                    = "${var.image}"
-  user_data                = "${var.user_data}"
+  user_data                = "${var.user_data == "" && var.image == "" ? file("${path.module}/cloudinit.tpl") : var.user_data}"
   machine_type             = "${var.machine_type}"
   instance_subnetwork_name = "${var.bootstrap_subnetwork_name}"
   ssh_user                 = "${var.ssh_user}"
