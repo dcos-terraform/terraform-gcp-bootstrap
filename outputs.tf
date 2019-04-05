@@ -1,12 +1,12 @@
 # Number of Instance
 output "num_bootstrap" {
-  description = "Number of Instance"
+  description = "Specify the amount of bootstrap. You should have at most 1"
   value       = "${var.num_bootstrap}"
 }
 
 # Cluster Name
 output "name_prefix" {
-  description = "Cluster Name"
+  description = "Name Prefix"
   value       = "${var.cluster_name}"
 }
 
