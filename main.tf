@@ -38,6 +38,7 @@ module "dcos-bootstrap-instance" {
   }
 
   cluster_name             = "${var.cluster_name}"
+  prefix_name              = "${var.prefix_name}"
   hostname_format          = "${var.hostname_format}"
   num_instances            = "${var.num_bootstrap}"
   image                    = "${var.image}"
