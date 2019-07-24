@@ -53,7 +53,7 @@ variable "tags" {
 }
 
 variable "scheduling_preemptible" {
-  description = "Deploy instance with preemptible scheduling. (bool)"
+  description = "Deploy instance with preemptible scheduling"
   default     = false
 }
 

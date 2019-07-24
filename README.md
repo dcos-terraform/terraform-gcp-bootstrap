@@ -42,7 +42,7 @@ module "bootstrap" {
 | labels | Add custom labels to all resources | map | `<map>` | no |
 | name\_prefix | Name Prefix | string | `""` | no |
 | num\_bootstrap | Specify the amount of bootstrap. You should have at most 1 | string | `"1"` | no |
-| scheduling\_preemptible | Deploy instance with preemptible scheduling. (bool) | string | `"false"` | no |
+| scheduling\_preemptible | Deploy instance with preemptible scheduling | string | `"false"` | no |
 | tags | Add custom tags to all resources | list | `<list>` | no |
 | user\_data | User data to be used on these instances (cloud-init) | string | `""` | no |
 | zone\_list | Element by zone list | list | `<list>` | no |
@@ -65,7 +65,7 @@ module "bootstrap" {
 | private\_ip | List of private ip addresses created by this module |
 | public\_ip | List of public ip addresses created by this module |
 | public\_ssh\_key | SSH Public Key |
-| scheduling\_preemptible | Deploy instance with preemptible scheduling. (bool) |
+| scheduling\_preemptible | Deploy instance with preemptible scheduling |
 | user\_data | User data to be used on these instances (cloud-init) |
 | zone\_list | Element by zone list |
 
